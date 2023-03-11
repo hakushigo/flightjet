@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  app:
+    image: ghcr.io/hakushigo/goexample
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - mariosa
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    links:
+      - app
+    networks:
+      - mariosa
+
+
+networks:
+  mariosa:
+    driver: bridge
