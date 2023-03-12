@@ -1,0 +1,26 @@
+name: say hello to jason
+on: 
+  push:
+    branches: 
+      - master
+      
+jobs:
+  first-we-have-idk:
+    runs-on: windows-latest
+    steps:
+      -
+        name: hello first we check the fucking code
+        uses: action/chcekout@v3
+      -
+        name: then we say hello "FOCK YO"
+        run: echo 'FUCK YO'
+      - 
+        name: and then we shall compile the fucking file
+        run: go build -o thisFileExsits main.go
+      -
+        name: idk what we should do at this point, oh what about release the fucking file here!
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.RELEASE_TOKEN }}
+          files: |
+            thisFileExsits
