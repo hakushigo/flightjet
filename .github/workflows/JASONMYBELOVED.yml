@@ -16,6 +16,50 @@ jobs:
         run: echo 'FUCK YO'
       - 
         name: and then we shall compile the fucking file
+        run: go build -o thisFileExsits.exe main.go
+      -
+        name: idk what we should do at this point, oh what about release the fucking file here!
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: mother, wot the fuck
+          token: ${{ secrets.RELEASE_TOKEN }}
+          files: |
+            thisFileExsits.exe
+
+  yeeeyey:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: hello first we check the fucking code
+        uses: actions/checkout@v3
+      -
+        name: then we say hello "FOCK YO"
+        run: echo 'FUCK YO'
+      - 
+        name: and then we shall compile the fucking file
+        run: go build -o thisFileExsits main.go
+      -
+        name: idk what we should do at this point, oh what about release the fucking file here!
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: mother, wot the fuck
+          token: ${{ secrets.RELEASE_TOKEN }}
+          files: |
+            thisFileExsits
+
+  AREUSTILLALIVE:
+    runs-on: macos-latest
+    steps:
+      -
+        name: hello first we check the fucking code
+        uses: actions/checkout@v3
+      -
+        name: then we say hello "FOCK YO"
+        run: echo 'FUCK YO'
+      - 
+        name: and then we shall compile the fucking file
         run: go build -o thisFileExsits main.go
       -
         name: idk what we should do at this point, oh what about release the fucking file here!
