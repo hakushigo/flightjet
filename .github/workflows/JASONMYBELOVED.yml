@@ -1,4 +1,4 @@
-name: say hello to jason
+name: JASON MY BELOVED BOY!
 on: 
   push:
     branches: 
@@ -10,7 +10,7 @@ jobs:
     steps:
       -
         name: hello first we check the fucking code
-        uses: action/chcekout@v3
+        uses: action/checkout@v3
       -
         name: then we say hello "FOCK YO"
         run: echo 'FUCK YO'
